@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Show Peoples</title>
+  </head>
+  <body>
+    
+
+    <div class="container">
+        <h1>Show Peoples</h1>
+        <p><a class="btn btn-primary" href="/peoples/add" role="button">Add Person</a></p>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Address</th>
+                <th scope="col">isMale</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% for (let i  = 0; i < peoples.length; i++) { %>
+              <tr>
+                <th scope="row"><%= peoples[i].id %></th>
+                <td><%= peoples[i].firstname %></td>
+                <td><%= peoples[i].lastname %></td>
+                <td><%= peoples[i].age %></td>
+                <td><%= peoples[i].address %></td>
+                <td><%= peoples[i].isMale %></td>
+                <td><a class="btn btn-success" href="/peoples/<%= peoples[i].id %>/edit" role="button">Edit</a></td>
+                <td><a class="btn btn-danger" href="/peoples/<%= peoples[i].id %>/delete" role="button">Delete</a></td>
+              </tr>
+              <% } %>
+              
+            </tbody>
+          </table>
+    </div>
+
+  </body>
+</html>

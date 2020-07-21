@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Edit People</title>
+  </head>
+  <body>
+    
+
+    <div class="container">
+        <h1>Edit People</h1>
+        <p><a class="btn btn-link" href="/peoples" role="button">Show All</a></p>
+        <form action="/peoples/<%= people.id %>/edit" method="post">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstname" value="<%= people.firstname %>">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name </label>
+                <input type="text" class="form-control" id="lastName" name="lastname" value="<%= people.lastname %>">
+              </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" name="age" value="<%= people.age %>">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Address</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"><%= people.address %></textarea>
+              </div>
+
+
+            <div class="form-group form-check">
+              <input type="radio" class="form-check-input" id="exampleCheck1" name="isMale" value="TRUE" <%if(people.isMale == true) { %> checked <% } %>>
+            <label class="form-check-label" for="exampleCheck1">Male</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="radio" class="form-check-input" id="exampleCheck1" name="isMale" value="FALSE" <%if(people.isMale == false) { %> checked <% } %>>
+              <label class="form-check-label" for="exampleCheck1">Female</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+  </body>
+</html>
