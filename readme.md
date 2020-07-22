@@ -1,8 +1,5 @@
 ## LECTURE MVC Express PG
 
-------
-
-
 
 ### SLIDE
 
